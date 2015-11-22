@@ -1,0 +1,10 @@
+<section ng-controller=UsersController ng-init="find()">
+  <p ng-model=name>{{name}}<p>
+  <li data-ng-repeat="user in users">
+    <p>{{user}}</p>
+  </li>
+  
+     <div data-ng-show="error">
+      <strong data-ng-bind="error"></strong>
+    </div>
+</section>
