@@ -1,0 +1,13 @@
+<section ng-controller=UsersController ng-init="findOne()">
+  <form ng-submit="update()">
+    <div>
+      <label for="firstName">First Name</label>
+      <div>
+        <input type="text" ng-model="user.firstName" id="firstName" placeholder="First Name" required>
+      </div>
+    </div>
+    <div>
+      <input type="submit" value="Update">
+    </div>
+  </form>
+</section>

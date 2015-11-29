@@ -18,12 +18,12 @@ module.exports = function (app) {
 
 	app.route('/api/users')
 		.get(users.requiresLogin, users.list)
-		.post(users.create);
+		.post(users.create); //not used, used signup function to add users
 
 	app.route('/api/users/:userId')
-		.get(users.read)
-		.put(users.update)
-		.delete(users.delete);
+		.get(users.requiresLogin, users.read)
+		.put(users.requiresLogin, users.update)
+		.delete(users.requiresLogin, users.delete);
 
 	app.param('userId', users.userByID);
 };
