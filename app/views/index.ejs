@@ -41,6 +41,15 @@
           <li><a href="#/users">Users</a></li>
           <li><a href="#/about">About</a></li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if ( user ) { %>
+            <li><a href="/signout">Sign out</a></li>
+            <% } else { %>
+              <li><a href="/signup">Signup</a></li>
+              <li><a href="/signin">Signin</a></li>
+              <% } %>
+                <br>
+        </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
@@ -49,22 +58,10 @@
   <div class="container">
     <div class="starter-template">
       <h1>Welcome</h1>
-      <p class="lead">Use this document as a way to quickly start any new project.
-        <br> All you get is this text and a mostly barebones HTML document.</p>
+      <p class="lead">
+        <section ng-view></section>
+      </p>
     </div>
-
-    <div>
-      <% if ( user ) { %>
-        <a href="/signout">Sign out</a>
-        <% } else { %>
-          <a href="/signup">Signup</a>
-          <a href="/signin">Signin</a>
-          <% } %>
-            <br>
-    </div>
-
-    <section ng-view></section>
-
   </div>
 
   <script type="text/javascript">

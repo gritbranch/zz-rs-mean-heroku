@@ -1,9 +1,8 @@
 <section ng-controller=UsersController ng-init="find()">
   <p ng-model=name>{{name}}</p>
-  <li data-ng-repeat="user in users">
-    <a ng-href="#/users/{{user._id}}">{{user.username}}</a>
-  </li>
-
+  <ul data-ng-repeat="user in users">
+    <li><a ng-href="#/users/{{user._id}}">{{user.username}}</a></li>
+  </ul>
   <div data-ng-show="error">
     <strong data-ng-bind="error"></strong>
   </div>
