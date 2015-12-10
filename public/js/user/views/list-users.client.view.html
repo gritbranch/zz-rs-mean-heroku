@@ -1,8 +1,21 @@
 <section ng-controller=UsersController ng-init="find()">
   <p ng-model=name>{{name}}</p>
-  <ul data-ng-repeat="user in users">
-    <li><a ng-href="#/users/{{user._id}}">{{user.username}}</a></li>
-  </ul>
+  
+  <div class="row">
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-4">
+      <div class="list-group" data-ng-repeat="user in users | orderBy: ['lastName','firstName']">
+        <a href="#/users/{{user._id}}" class="list-group-item">
+          <h4 class="list-group-item-heading">Name: {{user.fullName}}</h4>
+          <p class="list-group-item-text">{{user.username}}</p>
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-4">
+    </div>
+  </div>
+
   <div data-ng-show="error">
     <strong data-ng-bind="error"></strong>
   </div>

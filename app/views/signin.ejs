@@ -17,7 +17,7 @@
 	<link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="css/signin.css" rel="stylesheet">	
+	<link href="css/signin.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,30 +47,32 @@
 			<!--/.nav-collapse -->
 		</div>
 	</nav>
-
-	<% for(var i in messages) { %>
-		<div class="flash">
-			<%= messages[i] %>
+	<div class="container">
+		<div>
+			<% for(var i in messages) { %>
+				<div class="flash alert alert-danger" role="alert">
+					<%= messages[i] %>
+				</div>
+				<% } %>
 		</div>
-		<% } %>
-			<div class="container">
-				<form class="form-signin" action="/signin" method="post">
-					<h2 class="form-signin-heading"><%= title %></h2>
-					<div>
-						<label for="inputUsername" class="sr-only">Username</label>
-						<input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" required autofocus>
-					</div>
-					<div>
-						<label for="inputPassword" class="sr-only">Password</label>
-						<input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
-					</div>
-					<div>
-						<input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign In"></input>
-					</div>
-				</form>
+		
+		<form class="form-signin" action="/signin" method="post">
+			<h2 class="form-signin-heading"><%= title %></h2>
+			<div>
+				<label for="inputUsername" class="sr-only">Username</label>
+				<input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" required autofocus>
 			</div>
-			
-			
+			<div>
+				<label for="inputPassword" class="sr-only">Password</label>
+				<input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+			</div>
+			<div>
+				<input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign In"></input>
+			</div>
+		</form>
+	</div>
+
+
 </body>
 
 </html>

@@ -1,5 +1,61 @@
 <section ng-controller=UsersController ng-init="findOne()">
-  <p>{{user}}</p>
-  <a ng-href="/#/users/{{user._id}}/edit" type="button" class="btn btn-primary">Edit</a>
-  <button type="button" class="btn btn-danger" ng-click="delete()">Delete</button>
+  <div class="row">
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-4">
+      <!--
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Full Name: {{user.fullName}}</h3>
+        </div>
+        <div class="panel-body">
+          <p>Username: {{user.username}}</p>
+          <p>Email: {{user.email}}</p>
+          <p>Provider: {{user.provider}}</p>
+          <p>Date Created: {{user.created}}</p>
+        </div>
+      </div>
+      <a ng-href="/#/users/{{user._id}}/edit" type="button" class="btn btn-primary">Edit</a>
+      <button type="button" class="btn btn-danger" ng-click="delete()">Delete</button>
+      -->
+      <h2 class="form-signin-heading">View User</h2>
+      <div>
+        <label for="viewFirstName" class="sr-only">First Name</label>
+        <input type="text" id="viewFirstName" class="form-control" placeholder="First Name" name="firstName" ng-model="user.firstName"
+        disabled>
+      </div>
+      <div>
+        <label for="viewLastName" class="sr-only">Last Name</label>
+        <input type="text" id="viewLastName" class="form-control" placeholder="Last Name" name="lastName" ng-model="user.lastName"
+        disabled>
+      </div>
+      <div>
+        <label for="viewEmail" class="sr-only">Email</label>
+        <input type="email" id="viewEmail" class="form-control" placeholder="Email" name="email" ng-model="user.email" disabled>
+      </div>
+      <div>
+        <label for="viewUsername" class="sr-only">Username</label>
+        <input type="text" id="viewUsername" class="form-control" placeholder="Username" name="username" ng-model="user.username"
+        disabled>
+      </div>
+      <div>
+        <label for="viewProvider" class="sr-only">Provider</label>
+        <input type="text" id="viewProvider" class="form-control" placeholder="Provider" name="provider" ng-model="user.provider"
+        disabled>
+      </div>
+      <div>
+        <label for="viewDateCreated" class="sr-only">Date Created</label>
+        <input type="text" id="viewDateCreated" class="form-control" placeholder="Date Created" name="created" ng-model="user.created"
+        disabled>
+      </div>
+      <div>
+        <a ng-href="/#/users/{{user._id}}/edit" type="button" class="btn btn-lg btn-primary btn-block">Edit</a>
+      </div>
+      <div>
+        <button type="button" class="btn btn-lg btn-danger btn-block" ng-click="delete()">Delete</button>
+      </div>
+    </div>
+    <div class="col-lg-4">
+    </div>
+  </div>
 </section>
