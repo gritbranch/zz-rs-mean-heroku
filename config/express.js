@@ -5,7 +5,7 @@ var express = require('express'),
   methodOverride = require('method-override'),
   session = require('express-session'),
   config = require('./config'),
-    flash = require('connect-flash'),  
+  flash = require('connect-flash'),
   passport = require('passport');
 
 module.exports = function () {
